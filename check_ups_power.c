@@ -88,16 +88,16 @@ main(int argc, char **argv)
 	div_val = (float)retval / 1000.00;
 	/* check thresholds and print perf data */
 	if (retval < CRIT_LT || retval > CRIT_HT) {
-		printf("UPS POWER CRITICAL - Power(Kw) :%.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
+		printf("UPS POWER CRITICAL - Power(Kw) %.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
 			div_val, div_val, WARN_HT, CRIT_HT, CRIT_LT, CRIT_HT);	
 		ec = CRITICAL;
 	} else
 	if (retval < WARN_LT || retval > WARN_HT) {
-		printf("UPS POWER WARNING - Power(Kw) :%.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
+		printf("UPS POWER WARNING - Power(Kw) %.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
 			div_val, div_val, WARN_HT, CRIT_HT, CRIT_LT, CRIT_HT);	
 		ec = WARNING;
 	} else {
-		printf("UPS POWER OK - Power(Kw) :%.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
+		printf("UPS POWER OK - Power(Kw) %.2f | 'power(Kw)'=%.2f;%d;%d;%d;%d\n",
 			div_val, div_val, WARN_HT, CRIT_HT, CRIT_LT, CRIT_HT);	
 		ec = OK;
 	}
